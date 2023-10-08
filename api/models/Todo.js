@@ -12,7 +12,7 @@ const ToDoSchema = new Schema({
     },
     timestamp:{
         type:String,
-        required:Date.now()
+        default:Date.now()
     }
 })
 
