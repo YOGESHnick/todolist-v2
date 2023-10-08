@@ -33,4 +33,12 @@ app.delete('/todos/delete/:id', async (req,res) => {
      res.json(result); 
 })
 
+app.put('/todos/complete/:id', async (req,res) => {
+
+    const todo = await Todo.findById(req.params.id);
+    todo.complete = !todo.complete;
+    todo.save();
+    res.json(todo); 
+})
+
 app.listen(3001, ()=>console.log("Server Started !"));
