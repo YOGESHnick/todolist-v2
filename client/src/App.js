@@ -22,16 +22,21 @@ function App() {
       <h1>Welcome, buddy!</h1>
       <h3>TASKS :</h3>
       <div className="todos">
-        <div className="todo">
+
+        {todos.map( todo => (
+          <div className={"todo "+ (todo.complete ? "is-complete" : "")} key={todo._id} >
+          <div className="checkbox"></div>
+          <div className="text">{ todo.text }</div>
+          <div className="delete-todo ">x</div>
+        </div>
+
+        ))}
+        
+        {/* <div className="todo is-complete">
           <div className="checkbox"></div>
           <div className="text">Get Bread</div>
           <div className="delete-todo ">x</div>
-        </div>
-        <div className="todo is-complete">
-          <div className="checkbox"></div>
-          <div className="text">Get Bread</div>
-          <div className="delete-todo ">x</div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -39,20 +44,7 @@ function App() {
 
 export default App;
 
-
-<div className="todos">
-        <div className="todo">
-            <div className="checkbox"></div>
-
-            <div className="text">Get Bread</div>
-
-            <div className="delete-todo ">x</div>
-          </div>
-          <div className="todo">
-            <div className="checkbox"></div>
-
-            <div className="text">Get Bread</div>
-
-            <div className="delete-todo ">x</div>
-          </div>
-        </div>
+{/* <div className={"todo" + (todo.complete ? "is-complete":"") } key={todo._id} >
+          <div className="checkbox"></div>
+          <div className="text">{ todo.text }</div>
+          <div className="delete-todo ">x</div> */}
