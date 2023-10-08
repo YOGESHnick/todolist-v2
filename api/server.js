@@ -14,4 +14,9 @@ mongoose.connect("mongodb://127.0.0.1:27017/mern-todo", {
     .then(() => console.log("Connected Successfully !"))
     .catch(error => console.log(error));
 
+app.get('/todo', async (req,res)=>{
+    const todos = await Todo.find();
+    res.json(todos);
+})
+
 app.listen(3001, ()=>console.log("Server Started !"));
