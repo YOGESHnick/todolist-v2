@@ -11,7 +11,10 @@ const ToDoSchema = new Schema({
         default:false
     },
     timestamp:{
-        type:,String
+        type:String,
         required:Date.now()
     }
 })
+
+const ToDo = mongoose.model("Todo",ToDoSchema );
+module.exports=ToDo
